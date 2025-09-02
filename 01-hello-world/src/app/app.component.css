@@ -1,0 +1,30 @@
+header,
+section {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1rem;
+    margin-bottom: 1rem
+}
+
+.one-way {
+    background-color: mediumspringgreen;
+}
+
+.two-way {
+    background-color: lightgoldenrodyellow;
+}
+
+/* Directivas de atributos ngClass */
+.selected {
+    background-color: black;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+.other {
+    background-color: lightgray;
+    padding: 5px;
+}
+
+.attr-directive {
+    background-color: lightblue;
+}
