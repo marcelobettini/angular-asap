@@ -10,7 +10,7 @@ import { Item } from '../types'
 export class AddItemComponent {
   newItemName: string = ""
   @Output() addItemEvent = new EventEmitter<Item>()
-  addItem() {
+  notifyAddItem() {
     if (this.newItemName.trim()) {
 
       const newItem: Item = {
