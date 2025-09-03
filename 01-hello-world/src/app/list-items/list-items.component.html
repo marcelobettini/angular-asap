@@ -1,0 +1,7 @@
+<h2>Lista de Items</h2>
+<app-add-item (addItemEvent)="addItem($event)" />
+<ul>
+    @for (item of items; track item.id){
+    <li [ngClass]="{notAvailable: !item.isAvailable}" (click)="toggleIsAvailable(item)">{{item.name}} </li>
+    }
+</ul>
