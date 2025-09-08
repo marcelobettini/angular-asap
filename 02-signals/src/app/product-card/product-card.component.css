@@ -1,0 +1,13 @@
+.img-container {
+    display: flex;
+
+    & div {
+        margin-left: 1.5rem;
+
+        & .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    }
+}

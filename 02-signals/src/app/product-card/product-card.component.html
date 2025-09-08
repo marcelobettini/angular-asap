@@ -1,0 +1,14 @@
+<article>
+    <h3>{{product.title}}</h3>
+    <p>
+        {{product.description.substring(0,70)}}...
+    </p>
+    <div class="img-container">
+        <img [src]="product.image" [alt]="product.title" width="150">
+        <div>
+            <p class="price">${{product.price}}</p>
+            <p>{{product.category}}</p>
+            <p>{{product.rating.rate}} / {{product.rating.count}}</p>
+        </div>
+    </div>
+</article>

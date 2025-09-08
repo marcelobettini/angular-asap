@@ -1,0 +1,9 @@
+<header>
+    <h2>Product Listing and Managment</h2>
+</header>
+<section class="product-listing">
+    @for(product of products(); track product.id){
+    <app-product-card [product]="product" />
+
+    }
+</section>
