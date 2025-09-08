@@ -1,7 +1,14 @@
 <article>
     <h3>{{product.title}}</h3>
+
+    <!--  Señal para mostrar más o menos-->
     <p>
-        {{product.description.substring(0,70)}}...
+        @if(isFullText()){
+        {{product.description}}
+        }@else{
+        {{product.description.slice(0,70)}}...
+        }
+        <span (click)="isFullText.set(!isFullText())">{{isFullText()? '-':'+'}}</span>
     </p>
     <div class="img-container">
         <img [src]="product.image" [alt]="product.title" width="150">

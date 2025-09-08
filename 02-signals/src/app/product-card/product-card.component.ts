@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, signal, WritableSignal } from '@angular/core'
 import { Product } from '../../data/product.type'
 
 @Component({
@@ -10,5 +10,6 @@ import { Product } from '../../data/product.type'
 export class ProductCardComponent {
   @Input()
   product!: Product
+  isFullText: WritableSignal<boolean> = signal(false)
 
 }
