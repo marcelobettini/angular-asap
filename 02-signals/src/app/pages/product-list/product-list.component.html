@@ -4,7 +4,7 @@
 <app-product-add />
 <section class="product-listing">
     @for(product of products(); track product.id){
-    <app-product-card [product]="product" />
+    <app-product-list-item [product]="product" />
 
     }
 </section>

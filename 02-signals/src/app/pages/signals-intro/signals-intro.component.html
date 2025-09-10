@@ -1,0 +1,57 @@
+<section>
+    <article>
+        <h2>¿Qué son las señales?</h2>
+        <p>
+            Una señal es un contenedor de un valor que notifica a los consumidores interesados cuando ese valor cambia.
+            Las
+            señales pueden contener cualquier valor, desde primitivas hasta estructuras de datos complejas.
+        </p>
+
+        <p>
+            El valor de una señal se lee llamando a su función <code>getter</code>, lo que permite a
+            Angular realizar un seguimiento de dónde se utiliza la señal.
+        </p>
+        <p>Las señales pueden ser mutables o de solo lectura.</p>
+    </article>
+
+
+    <article>
+        <h3>Enfoque antiguo con ZoneJS</h3>
+        <p>
+            El enfoque anterior utilizaba ZoneJS para realizar un seguimiento de los cambios en el estado de la
+            aplicación
+            y actualizar la interfaz de usuario en consecuencia. Esto se hacía mediante mecanismos de detección de
+            cambios
+            que comprobaban si se habían producido cambios en el estado del componente.
+        </p>
+        <p><strong>Más lento - Más pesado</strong></p>
+        <p>{{oldCount}}</p>
+        <button (click)="addOneToOldCount()">agregar 1 con ZoneJS</button>
+    </article>
+    <article>
+        <h3>Nuevo paradigma: Signals</h3>
+        <p>
+            Las señales proporcionan una forma más eficiente de gestionar los cambios de estado en las aplicaciones
+            Angular.
+            Permiten un control preciso sobre cuándo se actualiza la interfaz de usuario,
+            lo que se traduce en un mejor rendimiento y capacidad de respuesta.
+        </p>
+        <p><strong>Más rápido - Más liviano</strong></p>
+        <p>Valor de 'count' desde una señal: <b>{{count()}}</b></p>
+        <div class="btnGroup">
+            <button (click)="addOne()">Suma 1</button>
+            <button (click)="subOne()">Resta 1</button>
+            <button (click)="reset()">Reinicia</button>
+        </div>
+        <p>Valor de una señal calculada: <b>{{doubleCount()}}</b></p>
+        <hr />
+        <p>
+            conditionalCount debería imprimirse debajo, dependiendo de la señal calculada
+            <code>conditionalCount</code> y la señal mutable <code>showCount</code>:
+        </p>
+
+        <button (click)="toggleShowcount()">Toggle</button>
+        <p>Value of <code>showCount</code>: <b>{{showCount()}}</b></p>
+        <p>{{conditionalMessage()}}</p>
+    </article>
+</section>

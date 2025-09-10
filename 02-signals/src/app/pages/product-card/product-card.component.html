@@ -1,0 +1,23 @@
+<article>
+
+    <h3>{{product?.title}}</h3>
+
+
+    <p>
+        @if(isFullText()){
+        {{product?.description}}
+        }@else{
+        {{product?.description?.slice(0,70)}}...
+        }
+        <span (click)="isFullText.set(!isFullText())">{{isFullText()? '-':'+'}}</span>
+    </p>
+    <div class="img-container">
+        <img [src]="product?.image" [alt]="product?.title" width="150">
+        <div>
+            <p class="price">${{product?.price}}</p>
+            <p>{{product?.category}}</p>
+            <p>{{product?.rating?.rate}} / {{product?.rating?.count}}</p>
+            <a routerLink="/products">Back</a>
+        </div>
+    </div>
+</article>
