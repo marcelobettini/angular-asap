@@ -1,0 +1,7 @@
+.form-types-container {
+    margin-top: 4rem;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}

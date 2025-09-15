@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(54, 71, 87, 0.422);
+}
+
+.form-container {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 2);
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+}
