@@ -1,0 +1,50 @@
+<div class="form-container">
+    <h2>Template-Driven Validation</h2>
+    <form #form="ngForm" (submit)="handleSubmit($event)">
+
+        <label>User Name
+            <input type="text" name="userName" [(ngModel)]="user.name" #userName="ngModel" required minlength="4"
+                autofocus="true">
+        </label>
+        @if(userName.invalid && (userName.dirty || userName.touched)){
+        <div class="alert">
+            @if(userName.hasError('required')){
+            <div>
+                User is required
+            </div>
+            }
+            @if(userName.hasError('minlength')){
+            <div>
+                At least 4 characters
+            </div>
+
+            }
+        </div>
+        }
+        <label>Email Address
+            <!-- <input type="email" name="userEmail" [(ngModel)]="user.email" #userEmail="ngModel" required email> -->
+            <input type="email" name="userEmail" [(ngModel)]="user.email" #userEmail="ngModel" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+        </label>
+        @if(userEmail.invalid && (userEmail.dirty || userEmail.touched)){
+        <div class="alert">
+            @if(userEmail.hasError('required')){
+            <div>
+                Email is required
+            </div>
+            }
+            @if(userEmail.hasError('pattern')){
+            <div>
+                Invalid email format
+            </div>
+
+            }
+        </div>
+        }
+        <button type="submit" [disabled]="form.invalid">Confirm</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <p>user name: {{user.name}}</p>
+    <p>user email: {{user.email}}</p>
+</div>
