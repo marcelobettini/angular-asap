@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router'
-import { Home } from './home/home'
+import { Home } from './pages/home/home'
 
 export const routes: Routes = [
     {
@@ -14,10 +14,10 @@ export const routes: Routes = [
     },
     {
         path: 'form-types',
-        loadComponent: () => import('./form-types/form-types').then(c => c.FormTypes)
+        loadComponent: () => import('./pages/form-types/form-types').then(c => c.FormTypes)
     },
     {
         path: 'form-validation',
-        loadComponent: () => import('./form-validation/form-validation').then(c => c.FormValidation)
+        loadComponent: () => import('./pages/form-validation/form-validation').then(c => c.FormValidation)
     }
 ]
