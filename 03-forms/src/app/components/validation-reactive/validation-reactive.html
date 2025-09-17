@@ -1,1 +1,44 @@
-<p>validation-reactive works!</p>
+<div class="form-container">
+    <h2>Reactive Form Validation</h2>
+    <form [formGroup]="userForm" (submit)="handleSubmit($event)">
+        <label>User Name
+            <input type="text" formControlName="name">
+            @if(nameControl.invalid && (nameControl.dirty || nameControl.touched)){
+            <div class="alert">
+                @if(nameControl.hasError('required')){
+                <div>
+                    User is required
+                </div>
+                }
+                @if(nameControl.hasError('minlength')){
+                <div>
+                    At least 5 characters
+                </div>
+                }
+            </div>
+            }
+        </label>
+        <label>Email Address
+            <input type="email" formControlName="email">
+        </label>
+        @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
+        <div class="alert">
+            @if (emailControl.hasError('required')) {
+            <div>
+                Email is required
+            </div>
+            }
+            @if (emailControl.hasError('pattern')) {
+            <div>
+                Invalid email format
+            </div>
+            }
+        </div>
+        }
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+    <p>user name: {{user.name}}</p>
+    <p>user email: {{user.email}}</p>
+</div>
