@@ -1,14 +1,14 @@
 <section>
-    <!-- form de filtro -->
+    form de filtro
     <input type="search" placeholder="Filter by city" #filter>
     <button class="primary">Search</button>
 
 </section>
 <section class="results">
-    @if(!housingLocationList().length){
+    @if(service.loading()){
     <span>Loading...</span>
-    } @for(house of filteredHousingLocation(); track house.id){
-    <app-housing-location></app-housing-location>
+    } @for(house of service.filteredLocationList(); track house.id){
+    <app-housing-location [housingLocation]="house"></app-housing-location>
 
     }
 </section>

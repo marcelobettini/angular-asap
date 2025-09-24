@@ -1,1 +1,22 @@
-<p>details works!</p>
+@if(loading()){
+<p>Loading...</p>
+} @else {
+<article>
+
+    <img class="listing-photo" [src]="house()?.photo" [alt]="house()?.name" />
+    <section class="listing-description">
+        <h2 class="listing-heading">{{ house()?.name }}</h2>
+        <p class="listing-location">
+            {{ house()?.city }}, {{ house()?.state }}
+        </p>
+    </section>
+    <section class="listing-features">
+        <h2 class="section-heading">About this location</h2>
+        <ul>
+            <li>Units available: {{ house()?.availableUnits }}</li>
+            <li>Does this location have wifi:{{ house()?.wifi ? 'Yes':'No'}}</li>
+            <li>Does this location have laundry:{{ house()?.laundry ? 'Yes':'No' }}</li>
+        </ul>
+    </section>
+</article>
+}
