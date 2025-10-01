@@ -1,1 +1,9 @@
-<p>search works!</p>
+<h2 class="text-2xl font-bold mt-5">Buscar Gifs</h2>
+<h3 class="text-gray-900">Buscar por título, descripción, tags...</h3>
+<section>
+    <input type="search" placeholder="texto a buscar..." aria-label="buscador de gifs" #textSearch
+        (keyup.enter)="onSearch(textSearch.value)" class="mt-3 border-gray-300 rounded p-2">
+</section>
+<section class="py-5">
+    <gif-list [gifs]="giphyService.gifsFromSearch()" />
+</section>
