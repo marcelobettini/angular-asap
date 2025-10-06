@@ -17,6 +17,11 @@ export const routes: Routes = [
                 loadComponent: () => import('@pages/search/search.component')
             },
             {
+                path: 'history/:query',
+                loadComponent: () => import('@pages/history/history.component')
+
+            },
+            {
                 path: '**',
                 redirectTo: 'trending'
             }
